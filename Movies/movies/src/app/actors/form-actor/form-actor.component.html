@@ -1,0 +1,31 @@
+<form [formGroup]="actorForm" (ngSubmit)="saveChanges()">
+    <mat-form-field appearance="outline">
+        <mat-label>Name*</mat-label>
+        <input formControlName="name" matInput>
+        <mat-error> The name field is required</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Date of birth</mat-label>
+        <input formControlName="dateOfBirth" matInput  [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <h4>Select pic</h4>
+    <app-input-img
+     [urlCurrentImg]="actorModel?.picture"
+     (onImageSelected)="onImageSelected($event)"
+     ></app-input-img>
+
+     <h4>Bio</h4>
+     <app-input-markdown
+     [markdownContent]="actorModel?.biography"
+     (changeMarkdown)="changeMarkdown($event)"
+     ></app-input-markdown>
+
+    <div>
+        <button mat-flat-button color="primary" [disabled]="actorForm.invalid">Save Changes</button>
+        <a mat-stroked-button routerLink="/actors">Cancel</a>
+    </div>
+
+</form>

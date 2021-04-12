@@ -1,0 +1,12 @@
+C:\Users\EMILIA\source\repos\Movie.API\Movie.Domain\bin\Debug\net5.0\Movie.Domain.deps.json
+C:\Users\EMILIA\source\repos\Movie.API\Movie.Domain\bin\Debug\net5.0\Movie.Domain.dll
+C:\Users\EMILIA\source\repos\Movie.API\Movie.Domain\bin\Debug\net5.0\ref\Movie.Domain.dll
+C:\Users\EMILIA\source\repos\Movie.API\Movie.Domain\bin\Debug\net5.0\Movie.Domain.pdb
+C:\Users\EMILIA\source\repos\Movie.API\Movie.Domain\obj\Debug\net5.0\Movie.Domain.csprojAssemblyReference.cache
+C:\Users\EMILIA\source\repos\Movie.API\Movie.Domain\obj\Debug\net5.0\Movie.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\EMILIA\source\repos\Movie.API\Movie.Domain\obj\Debug\net5.0\Movie.Domain.AssemblyInfoInputs.cache
+C:\Users\EMILIA\source\repos\Movie.API\Movie.Domain\obj\Debug\net5.0\Movie.Domain.AssemblyInfo.cs
+C:\Users\EMILIA\source\repos\Movie.API\Movie.Domain\obj\Debug\net5.0\Movie.Domain.csproj.CoreCompileInputs.cache
+C:\Users\EMILIA\source\repos\Movie.API\Movie.Domain\obj\Debug\net5.0\Movie.Domain.dll
+C:\Users\EMILIA\source\repos\Movie.API\Movie.Domain\obj\Debug\net5.0\ref\Movie.Domain.dll
+C:\Users\EMILIA\source\repos\Movie.API\Movie.Domain\obj\Debug\net5.0\Movie.Domain.pdb

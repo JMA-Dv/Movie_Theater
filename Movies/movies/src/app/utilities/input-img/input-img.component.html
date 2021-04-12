@@ -1,0 +1,25 @@
+<div>
+    <div class="files-input">
+        <div class="files-input_img-container">
+
+            <button type="button" mat-raised-button (click)="fileInput.click()">Select Image</button>
+            <input type="file" hidden #fileInput accept="image/png, image/jpg" (change)="change($event)">
+        </div>
+
+        <div class="files-input_sheet-container">
+            <button type="button" mat-raised-button (click)="sheetInput.click()">Select Sheet</button>
+            <input type="file" hidden #sheetInput accept=".csv" (change)="changeSheet($event)">
+        </div>
+
+    
+    </div>
+
+    <div>
+        <div *ngIf="imageBase">
+            <img [src]="imageBase" alt="Img load">
+        </div>
+        <div *ngIf="urlCurrentImg">
+            <img [src]="urlCurrentImg" alt="Img load">
+        </div>
+    </div>
+</div>

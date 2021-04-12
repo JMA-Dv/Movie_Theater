@@ -1,0 +1,18 @@
+button{
+    margin-bottom: 1rem;
+}
+img{
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.files-input{
+    display: flex;
+    flex-direction: row;
+    &_img-container{
+        margin-right: 10px;
+    }
+    &_sheet-container{
+        margin-left: 30px;
+    }
+}
