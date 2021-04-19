@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Actor, ActorDTO } from 'src/app/models/actor.model';
+import { ActorService } from 'src/app/services/actor.service';
 
 @Component({
   selector: 'app-edit-actor',
@@ -9,18 +10,24 @@ import { Actor, ActorDTO } from 'src/app/models/actor.model';
 })
 export class EditActorComponent implements OnInit {
 
-  actorModel: Actor = {name: 'Algo', dateOfBirth: new Date(),
-  picture:'https://image.shutterstock.com/image-photo/los-angeles-jan-16-andrew-260nw-75151687.jpg',
-  biography:'Default', }
-  constructor(private  activatedRoute: ActivatedRoute) { }
+  actorModel: ActorDTO;
+  constructor(private  activatedRoute: ActivatedRoute,
+    private actorService: ActorService,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe((result)=>{
-      alert(result.id);
+    this.activatedRoute.params.subscribe((params)=>{
+      this.actorService.getActorById(params.id).subscribe(
+        (actor=> this.actorModel = actor));
     })
   }
   saveChanges(actor: Actor){
     console.log(actor);
+
+    this.actorService.updateActor(this.actorModel.id, actor).subscribe(()=>{
+      this.router.navigate(["/actors"]);
+    })
   }
 
 }

@@ -1,13 +1,14 @@
 export class Actor{
     name: string;
     dateOfBirth: Date;
-    picture:string;
+    picture:File;
     biography:string;
 }
 
 export class ActorDTO{
+    id:number
     name: string;
     dateOfBirth: Date;
-    picture:File;
+    picture:string;
     biography:string;
 }

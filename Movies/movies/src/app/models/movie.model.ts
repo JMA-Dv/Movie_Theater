@@ -1,3 +1,6 @@
+import { Genre } from "./genre.model";
+import { MovieTheaterDTO } from "./movie-theaters.model";
+
 //front
 export class Movie{
     title:string;
@@ -17,4 +20,8 @@ export class MovieDTO{
     trailer:string;
     releaseDate: Date;
     poster:string;
+}
+export class MoviePostGetDTO{
+    genre: Genre[];
+    movieTheaters: MovieTheaterDTO[];
 }

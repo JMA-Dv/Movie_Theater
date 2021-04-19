@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { MovieTheater } from 'src/app/models/movie-theaters.model';
+import { ActivatedRoute, Router } from '@angular/router';
+import { MovieTheater, MovieTheaterDTO } from 'src/app/models/movie-theaters.model';
+import { MovieTheaterService } from 'src/app/services/movie-theater.service';
 
 @Component({
   selector: 'app-edit-movie-theater',
@@ -9,19 +10,27 @@ import { MovieTheater } from 'src/app/models/movie-theaters.model';
 })
 export class EditMovieTheaterComponent implements OnInit {
 
-  movieTheaterModel: MovieTheater = {name: 'somewhere',
-  latitude:22.148610426316303,
-  longitude:-100.9083938598633};
+  movieTheaterModel: MovieTheaterDTO; 
    
-  constructor(private  activatedRoute: ActivatedRoute) { }
+  constructor(private  activatedRoute: ActivatedRoute,
+    private movieTheaterService: MovieTheaterService,
+    private router:Router) { }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe((result)=>{
-      
-    })
+    this.loadData();
   }
-  saveChanges(movieTheaters: MovieTheater):void{
+  saveChanges(movieTheater: MovieTheater):void{
+    this.movieTheaterService.updateMovieTheater(this.movieTheaterModel.id,movieTheater)
+    .subscribe(()=>this.router.navigate(["/movietheaters"]));
 
   }
+  loadData():void{
+    this.activatedRoute.params.subscribe((params)=>{
+      this.movieTheaterService.getMovieTheatherById(params.id)
+      .subscribe(theater=> this.movieTheaterModel = theater);
+      
+    });
+  } 
+  
 
 }

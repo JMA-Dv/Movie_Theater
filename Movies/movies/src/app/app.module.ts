@@ -11,6 +11,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms'
 import { MarkdownModule } from 'ngx-markdown'
 import { LeafletModule } from '@asymmetrik/ngx-leaflet'
 import  'leaflet/dist/images/marker-shadow.png';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2'
+
 
 
 
@@ -40,6 +42,7 @@ import { EditMovieComponent } from './movies/edit-movie/edit-movie.component';
 import { MultipleSelectorComponent } from './utilities/multiple-selector/multiple-selector.component';
 import { ActorAutocompleteComponent } from './actors/actor-autocomplete/actor-autocomplete.component';
 import { DisplayErrorsComponent } from './utilities/display-errors/display-errors.component';
+import { AlertsService } from './services/alerts.service';
 
 @NgModule({
   declarations: [
@@ -83,12 +86,12 @@ import { DisplayErrorsComponent } from './utilities/display-errors/display-error
     FormsModule,
     LeafletModule,
     HttpClientModule,
-    
-    MarkdownModule.forRoot()
+    MarkdownModule.forRoot(),
+    SweetAlert2Module.forRoot()
 
 
   ],
-  providers: [],
+  providers: [AlertsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

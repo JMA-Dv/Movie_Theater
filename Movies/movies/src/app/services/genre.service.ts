@@ -15,11 +15,19 @@ export class GenreService {
   getAll():Observable<Genre[]>{
     return this.http.get<Genre[]>(this.apiURL);
   }
+  getGenreById(genreId: number):Observable<Genre>{
+    return this.http.get<Genre>(`${this.apiURL}/${genreId}`);
+  }
+
   
+  edit(genreId: number, genre: Genre){
+    return this.http.put(`${this.apiURL}/${genreId}`,genre);
+
+  }
   create(genre: Genre){
     return this.http.post(this.apiURL,genre);
   }
-  createSheet(sheet: string) {
-
+  deleteGenre(genreId: number){
+    return this.http.delete(`${this.apiURL}/${genreId}`);
   }
 }
